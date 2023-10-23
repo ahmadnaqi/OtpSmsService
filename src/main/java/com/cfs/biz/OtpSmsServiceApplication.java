@@ -24,6 +24,7 @@ public class OtpSmsServiceApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(OtpSmsServiceApplication.class, args);
+		System.out.println("<------OtpSmsService is started successfully--->");
 	}
 
 }

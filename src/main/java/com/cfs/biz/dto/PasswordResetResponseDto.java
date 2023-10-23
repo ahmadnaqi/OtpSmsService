@@ -10,7 +10,12 @@ import lombok.NoArgsConstructor;
 public class PasswordResetResponseDto {
 
 
-    private OtpStatus status;
+    public PasswordResetResponseDto(OtpStatus status, String message) {
+		super();
+		this.status = status;
+		this.message = message;
+	}
+	private OtpStatus status;
     private String message;
 	
     
