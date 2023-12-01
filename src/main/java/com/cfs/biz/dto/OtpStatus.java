@@ -2,5 +2,5 @@ package com.cfs.biz.dto;
 
 public enum OtpStatus {
 
-    DELIVERED,FAILED
+    DELIVERED,FAILED, SUCCESS
 }
