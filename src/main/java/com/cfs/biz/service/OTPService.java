@@ -47,6 +47,7 @@ public class OTPService {
 	            flag=true;
 	        } catch (Exception ex) {
 	            //passwordResetResponseDto = new PasswordResetResponseDto(OtpStatus.FAILED, ex.getMessage());
+	        	logger.error("Got Error while sending OTP:"+ex);
 	            flag=false;
 	        }
 	        return flag;

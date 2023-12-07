@@ -71,8 +71,7 @@ public class RouterController {
     public ResponseEntity<LoginInfoResDto> sendOTP(@RequestBody LoginInfoReqDto obj) {    	
     	logger.info("ENTRY:Received request for sendOTP:"+obj);    	
     	String LoginUserName= obj.getUserName();
-    	logger.info("LoginUserName:"+LoginUserName);
-    	
+    	logger.info("LoginUserName:"+LoginUserName);    	
     	LoginInfoResDto loginInfoResDto=null;
     	
     	if(LoginUserName == null || LoginUserName.isEmpty()) {    		  
