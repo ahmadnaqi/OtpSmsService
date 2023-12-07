@@ -29,10 +29,10 @@ public class LoginValidationSvc {
 			 String UserMobileNumber=UserNameList.get().getMobileNumber();
 		     boolean flag=otpService.sendOTPForUser(UserMobileNumber, UserName);		 
 			 if(flag) {
-				logger.info("valid login and otp sent on user mobile");
+				logger.info("valid login and OTP sent on user mobile");
 			   loginInfoResDto= new LoginInfoResDto(OtpStatus.SUCCESS,UserName);
 			 }else {	
-				 logger.info("valid login but otp not sent on user mobile");
+				 logger.info("valid login but could not send OTP on user mobile");
 			   loginInfoResDto= new LoginInfoResDto(OtpStatus.FAILED,UserName,null, "Could not send OTP,Try after sometime!");
 			 }
 		}else {
@@ -51,14 +51,14 @@ public class LoginValidationSvc {
 			 String UserMobileNumber=UserNameList.get().getMobileNumber();
 		     boolean flag=otpService.sendOTPForUser(UserMobileNumber, UserName);			
 			 if( flag) {
-				 logger.info("valid user and otp sent on user mobile");
+				 logger.info("Valid user and otp sent on user mobile");
 				 loginInfoResDto= new LoginInfoResDto(OtpStatus.SUCCESS,UserName,null, "OTP SENT"); 
 			 }else {
-				 logger.info("Invalid user,Could not send OTP on user mobile");
+				 logger.info("Valid user but could not send OTP on user mobile");
 				 loginInfoResDto= new LoginInfoResDto(OtpStatus.FAILED,UserName,null, "Could not send OTP,Try after sometime!"); 
 			 }
 		}else {
-			logger.info("Invalid user .......");
+			logger.info("Invalid user  so OTP not possible.");
 			 loginInfoResDto= new LoginInfoResDto(OtpStatus.FAILED,UserName,null, "INVALID USER NAME");
 		}
 		return loginInfoResDto;
@@ -72,7 +72,7 @@ public class LoginValidationSvc {
 			 String UserName=UserNameList.get().getUserName();
 		     boolean flag = otpService.sendOTPForUser(UserPhoneNumber, UserName);	 
 		     if(flag) {
-				 logger.info("valid user and otp sent on user mobile"); 
+				 logger.info("valid login and otp sent on user mobile"); 
 			     loginInfoResDto= new LoginInfoResDto(OtpStatus.SUCCESS,UserName);
 		     }else {
 		    	 logger.info("valid login could not sent OTP on user mobile");
